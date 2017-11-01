@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>jQuery Slot Machine</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2.0">
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="dist/jquery.slotmachine.css" type="text/css" media="screen" />
+
+		<script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="dist/jquery.slotmachine.js"></script>
+
+	</head>
+
+	<body>
+		
+		<!-- Badge -->
+		
+
+		<!-- Intro -->
+		
+		<!-- Flight example -->
+		<div id="plane" class="container">
+			<div class="row content">
+				<div class="col-md-2 col-lg-8 col-lg-offset-2">
+					<div class="">
+						
+
+						<div id="slot1">
+							<div class="text-center">
+								Company 1
+							</div>
+
+							<div class="text-center">
+								Company 2
+							</div>
+							<div class="text-center">
+								Company 3
+							</div>
+							<div class="text-center">
+								Company 4
+							</div>
+							<div class="text-center">
+								Company 5
+							</div>
+						</div>
+
+				
+					</div>
+				</div>
+			</div>
+		</div>
+
+                                <input type="button" id="playFancy" value="Random" class="">
+
+
+
+
+
+
+						<script>
+						var i = 0;
+							
+							var slot1 = $("#slot1").slotMachine({
+																	active	: 0,
+																	delay	: 500,
+																	auto : 500,
+																	spins : 5
+																	
+
+																});
+								
+								$('#playFancy').on( "click", function(){
+
+									
+									slot1.setRandomize(0);
+									
+
+								
+
+								});	
+
+
+
+
+
+						
+
+						</script>
+	</body>
+</html>

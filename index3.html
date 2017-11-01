@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>jQuery Slot Machine</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2.0">
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="dist/jquery.slotmachine.css" type="text/css" media="screen" />
+
+		<script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="dist/jquery.slotmachine.js"></script>
+
+	</head>
+
+	<body>
+		
+		
+
+		<div id="plane" class="container">
+			<div class="row content">
+				<div class="col-md-2 col-lg-8 col-lg-offset-2">
+					<div class="">
+
+						<div id="slot1">
+
+							<div id="result0" class="text-center"> 
+									      	
+							test
+
+							</div>
+
+							<div  id="result1" class="text-center"> 
+
+							1
+                            
+							</div>
+
+							<div  id="result2" class="text-center">
+
+							2
+
+							</div>
+
+							<div id="result3" class="text-center">
+
+							3
+
+							</div>
+
+							<div id="result4" class="text-center">
+
+							4
+
+							</div>
+
+							<div id="result5" class="text-center">
+
+							5
+
+							</div>
+
+						</div>
+				
+					</div>
+				</div>
+			</div>
+		</div>
+
+			
+			
+
+
+                                <input type="button" id="playFancy" value="change" >
+                                
+
+						<script>
+
+
+						
+							
+							var slot1 = $("#slot1").slotMachine({
+																	active	: 0,
+																	delay	: 1000
+																	
+
+																});
+
+							var slot2 = $("#slot2").slotMachine({
+																	active	: 0,
+																	delay	: 1000
+																	
+
+																});
+
+							var slot3 = $("#slot3").slotMachine({
+																	active	: 0,
+																	delay	: 1000
+																	
+
+																});
+
+
+							var slot4 = $("#slot4").slotMachine({
+																	active	: 0,
+																	delay	: 1000
+
+																});
+
+
+							var slot5 = $("#slot5").slotMachine({
+																	active	: 0,
+																	delay	: 1000
+																	
+
+																});
+
+
+							
+								
+	function post() {
+            
+           
+            $.post('get_small_prize.php',{},
+            function(data)
+            {   
+               
+                var records = jQuery.parseJSON(data);
+
+               finDealer1 = records[0];
+               finDealer2 = records[1];
+               finDealer3 = records[2];
+               finDealer4 = records[3];
+               finDealer5 = records[4];
+
+
+            $('#result1').text(finDealer1);
+            $('#result2').text(finDealer2);
+            $('#result3').text(finDealer3);
+            $('#result4').text(finDealer4);
+            $('#result5').text(finDealer5);
+
+            
+       
+
+          
+                
+
+
+            });
+        }
+								$('#playFancy').click(function(){
+
+									post();
+									
+		     		
+									slot1.setRandomize(3);
+									slot2.setRandomize(3);
+									slot3.setRandomize(3);
+									slot4.setRandomize(3);
+									slot5.setRandomize(3);
+									
+									slot1.shuffle(10);
+									slot2.shuffle(17);
+									slot3.shuffle(13);
+									slot4.shuffle(19);
+									slot5.shuffle(15);
+									
+
+
+								});	
+
+							
+
+
+						</script>
+	</body>
+</html>
